@@ -95,7 +95,7 @@ func (o *resourceTour) Create(ctx context.Context, req resource.CreateRequest, r
 	}
 
 	venueObj, d := types.ObjectValueFrom(ctx, venue{}.attrTypes(), &venue{
-		Capacity:    types.Int64Value(1000),
+		Capacity:    types.Int64Value(500),
 		Coordinates: types.StringValue("40.690574, -74.045564"),
 	})
 	resp.Diagnostics.Append(d...)
