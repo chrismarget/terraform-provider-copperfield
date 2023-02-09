@@ -10,7 +10,7 @@ hierarchy:
 - `candidates` (list of strings)
 - `venues` (list of objects)
 
-When modifying any unrelated attribute within this resource, members of the `venues` 
+When modifying an unrelated attribute within the resource, members of the `venues` 
 list vanish from the plan without a trace:
 
 ```
@@ -22,12 +22,12 @@ Terraform will perform the following actions:
           ~ "new_york" = {
               ~ season     = "spring" -> "summer"                          <--- this value was deliberately changed
               ~ venues     = [
-                  - {                                                      <+-- this list element has vanished
+                  - {                                                      <+-- this list element has vanished (ooh! ahh!)
                       - capacity    = 500 -> null                           |
                       - coordinates = "40.690574, -74.045564" -> null       |
                     },                                                     <+
                 ]
-                # (2 unchanged attributes hidden)                          <--- the "candidates" list is unmodified
+                # (2 unchanged attributes hidden)                          <--- the "candidates" list is in here, unmodified
             },
         }
         id     = "2185e2b4-bd0f-46de-a7f2-58fa967c6c39"
